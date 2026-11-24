@@ -130,3 +130,4 @@ small { display: block; color: var(--muted); font-size: .88rem; }
 /* Footer */
 .footer { background: var(--navy); color: #cfd9e8; padding: 28px 0; font-size: .92rem; }
 .footer a { color: var(--cyan); }
+.venue { font-style: normal; margin: 0 0 14px; line-height: 1.6; }

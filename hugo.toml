@@ -8,8 +8,9 @@ enableRobotsTXT = false
   subtitle = "Benchmarking AI Scientists: Frameworks, Datasets & Environments"
   date = "25 November 2026"
   hours = "09:30–15:45 GMT"
-  venue = "Renold Innovation Hub, Manchester, UK"
-  map = "https://maps.app.goo.gl/unv3CDWMM3G5zsHLA"
+  venue = "Renold Innovation Hub, Lower Ground Exhibition Space, Manchester, UK"
+  venue_lines = ["Renold Innovation Hub", "Lower Ground Exhibition Space", "Manchester, UK"]
+  map = "https://maps.app.goo.gl/huQMYRqrhZnR5o6y5"
   official = "https://constructorlabs.org/event/do-androids-dream-of-electric-papers/"
   day = "2026-11-25"   # all times are Europe/London; GMT = UTC in November
   contact = "contact@constructorlabs.org"

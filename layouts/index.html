@@ -16,7 +16,7 @@
     <dl class="facts">
       <div><dt>Date</dt><dd>{{ $p.date }}</dd></div>
       <div><dt>Time</dt><dd>{{ $p.hours }}</dd></div>
-      <div><dt>Venue</dt><dd><a href="{{ $p.map }}">{{ $p.venue }}</a></dd></div>
+      <div><dt>Venue</dt><dd><a href="{{ $p.map }}">{{ delimit $p.venue_lines "<br>" | safeHTML }}</a></dd></div>
     </dl>
     <p class="hosts">Hosted by Constructor Knowledge Labs in collaboration with ARIA · <a href="{{ $p.official }}">Official event page</a></p>
   </div>
@@ -140,7 +140,7 @@
 
   <section class="wrap block" id="venue">
     <h2>Venue</h2>
-    <p><strong>{{ $p.venue }}</strong></p>
+    <address class="venue"><strong>{{ index $p.venue_lines 0 }}</strong>{{ range after 1 $p.venue_lines }}<br>{{ . }}{{ end }}</address>
     <p><a class="button" href="{{ $p.map }}">Open in Google Maps</a></p>
     <p class="muted">Wi-Fi details and the working-stream invitation are shared with participants directly.</p>
   </section>
