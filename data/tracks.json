@@ -112,7 +112,7 @@
       },
       {
        "title": "Ground truth when it is scarce and slow",
-       "text": "In biology and materials one confirmed answer can take months of lab work. What can serve as a reference: experiments after the training cutoff, a replay of a field up to a given year, AI predictions that failed in the lab (Freeston), real false discoveries, open questions recorded with a date and resolved later by experiment (prospective tasks)? How strong is each source, and how do we handle partial or contested answers?",
+       "text": "In biology and materials one confirmed answer can take months of lab work. What can serve as a reference: experiments after the training cutoff, a replay of a field up to a given year, AI predictions that failed in the lab, real false discoveries, open questions recorded with a date and resolved later by experiment (prospective tasks)? How strong is each source, and how do we handle partial or contested answers?",
        "output": "Sources of reference answers ranked by strength",
        "feeds": [
         "Task card",
@@ -121,7 +121,7 @@
       },
       {
        "title": "Open-ended discovery",
-       "text": "How do we build tasks with no single right answer: noticing an anomaly without a hint, deciding that a new entity is needed, recognising emergence in an open-ended world (ALife), proposing what matters in an enzyme reaction (Finnigan)? What counts as success in such a task?",
+       "text": "How do we build tasks with no single right answer: noticing an anomaly without a hint, deciding that a new entity is needed, recognising emergence in an open-ended world (ALife), proposing what matters in an enzyme reaction? What counts as success in such a task?",
        "output": "One open-ended task type with its success criterion",
        "feeds": [
         "Reference tasks"
@@ -144,7 +144,7 @@
      "questions": [
       {
        "title": "The environment and the budget",
-       "text": "What should the environment allow, limit or hide while the agent works: feedback on correctness, access to the reference (leakage at run time), the number and cost of experiments? How do we compare agents that spend very different compute, time and experiments on the same task? How do we treat a real wet lab, with its cost, delays, noise and safety limits, as part of a benchmark (Lee, Riggs)?",
+       "text": "What should the environment allow, limit or hide while the agent works: feedback on correctness, access to the reference (leakage at run time), the number and cost of experiments? How do we compare agents that spend very different compute, time and experiments on the same task? How do we treat a real wet lab, with its cost, delays, noise and safety limits, as part of a benchmark?",
        "output": "Environment rules, mandatory and recommended; how cost enters the score",
        "feeds": [
         "Task card",
