@@ -7,6 +7,7 @@
     <a href="#tracks">Tracks</a>
     <a href="#convergence">Outputs</a>
     <a href="#venue">Venue</a>
+    <a href="#agent">Your agent</a>
   </nav>
   <div class="wrap">
     <p class="eyebrow">Working workshop · {{ $p.date }} · Manchester</p>
@@ -47,6 +48,17 @@
       <li><strong>An outline of a community whitepaper,</strong> with co-authors from the room.</li>
     </ul>
     <p class="note">Lightning talks have no Q&amp;A on stage. Questions and answers go to each talk's Miro board and to the working streams; participants received the links by e-mail.</p>
+  </section>
+
+  <section class="wrap block" id="agent">
+    <h2>Bring your AI agent</h2>
+    <p class="lead">Working with Claude, ChatGPT or another agent? Paste this line into it:</p>
+    {{ $prompt := printf "Read %sagent-onboarding-prompt.txt and follow the instructions." (absURL "") }}
+    <div class="agent-line">
+      <code id="agent-prompt">{{ $prompt }}</code>
+      <button type="button" class="copy" data-copy="agent-prompt" aria-label="Copy the line">Copy</button>
+    </div>
+    <p class="muted">The <a href="{{ "agent-onboarding-prompt.txt" | relURL }}">prompt</a> has your agent read this site, then ask you for the participants' folder link from the workshop e-mail, where it finds its instructions, the slides and read-only copies of the Miro boards.</p>
   </section>
 
   <section class="wrap block" id="programme">

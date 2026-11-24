@@ -57,3 +57,12 @@
   tick();
   setInterval(tick, 30000);
 })();
+
+// copy buttons ("Bring your AI agent")
+document.querySelectorAll("button.copy").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var t = document.getElementById(b.dataset.copy).textContent;
+    var done = function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1500); };
+    if (navigator.clipboard) { navigator.clipboard.writeText(t).then(done, function () {}); }
+  });
+});

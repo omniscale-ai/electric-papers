@@ -131,3 +131,9 @@ small { display: block; color: var(--muted); font-size: .88rem; }
 .footer { background: var(--navy); color: #cfd9e8; padding: 28px 0; font-size: .92rem; }
 .footer a { color: var(--cyan); }
 .venue { font-style: normal; margin: 0 0 14px; line-height: 1.6; }
+
+/* "Bring your AI agent" line */
+.agent-line { display: flex; gap: 8px; align-items: stretch; background: var(--navy); border-radius: var(--radius); padding: 10px; margin: 0 0 12px; }
+.agent-line code { flex: 1; min-width: 0; color: #fff; font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: .92rem; padding: 6px 8px; overflow-wrap: anywhere; }
+.agent-line .copy { flex: none; background: var(--cyan); color: var(--navy); border: 0; border-radius: 8px; padding: 0 14px; font: 700 .9rem "Inter", sans-serif; cursor: pointer; }
+.agent-line .copy:hover { background: #fff; }
