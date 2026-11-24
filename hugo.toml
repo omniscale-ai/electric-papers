@@ -1,0 +1,18 @@
+baseURL = "https://omniscale-ai.github.io/electric-papers/"
+languageCode = "en-gb"
+title = "Do Androids Dream of Electric Papers? · Working site"
+disableKinds = ["taxonomy", "term", "RSS", "section", "sitemap"]
+enableRobotsTXT = false
+
+[params]
+  subtitle = "Benchmarking AI Scientists: Frameworks, Datasets & Environments"
+  date = "25 November 2026"
+  hours = "09:30–15:45 GMT"
+  venue = "Renold Innovation Hub, Manchester, UK"
+  map = "https://maps.app.goo.gl/unv3CDWMM3G5zsHLA"
+  official = "https://constructorlabs.org/event/do-androids-dream-of-electric-papers/"
+  day = "2026-11-25"   # all times are Europe/London; GMT = UTC in November
+  contact = "contact@constructorlabs.org"
+
+[markup.goldmark.renderer]
+  unsafe = true

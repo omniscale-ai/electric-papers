@@ -1,0 +1,16 @@
+# Times are Europe/London (GMT on 25 Nov 2026). kind: arrive|talk|lightning|break|meal|session|close
+- {start: "09:30", end: "09:50", kind: arrive,    title: "Registration"}
+- {start: "09:50", end: "10:00", kind: talk,      title: "Opening: framing of the day", note: "Andrey Ustyuzhanin, Constructor Knowledge Labs"}
+- {start: "10:00", end: "10:30", kind: talk,      title: "Keynote: Advancing Scientific Research with AI Research Agents", note: "Tatiana Shavrina, FAIR, Meta Superintelligence Labs"}
+- {start: "10:30", end: "11:05", kind: lightning, title: "Lightning talks 1: what to evaluate", note: "Tasks, data, ground truth · 6 talks", anchor: "l1"}
+- {start: "11:05", end: "11:15", kind: break,     title: "Short break"}
+- {start: "11:15", end: "11:45", kind: lightning, title: "Lightning talks 2: how to evaluate", note: "Traces, metrics, judges, the system level · 5 talks", anchor: "l2"}
+- {start: "11:45", end: "11:50", kind: break,     title: "Changeover", note: "Join the Miro boards and working streams"}
+- {start: "11:50", end: "12:10", kind: meal,      title: "Coffee"}
+- {start: "12:10", end: "13:10", kind: session,   title: "Tracks A and B in parallel: question set 1", anchor: "tracks"}
+- {start: "13:10", end: "14:00", kind: meal,      title: "Lunch", note: "Provided by the organisers"}
+- {start: "14:00", end: "14:40", kind: session,   title: "Tracks A and B in parallel: question set 2", anchor: "tracks"}
+- {start: "14:40", end: "14:55", kind: break,     title: "Break"}
+- {start: "14:55", end: "15:35", kind: session,   title: "Convergence: drafting the v0 specification", note: "Each track presents its answers by spec block, then joint discussion"}
+- {start: "15:35", end: "15:45", kind: close,     title: "Closing: whitepaper and next steps", note: "How to join as a co-author"}
+- {start: "15:45", end: "16:30", kind: arrive,    title: "Networking"}

@@ -1,0 +1,155 @@
+{{ define "main" }}
+{{ $p := site.Params }}
+<header class="hero">
+  <nav class="topnav" aria-label="Sections">
+    <a href="#programme">Programme</a>
+    <a href="#talks">Talks</a>
+    <a href="#tracks">Tracks</a>
+    <a href="#convergence">Outputs</a>
+    <a href="#venue">Venue</a>
+  </nav>
+  <div class="wrap">
+    <p class="eyebrow">Working workshop · {{ $p.date }} · Manchester</p>
+    <h1>Do Androids Dream of Electric Papers?</h1>
+    <p class="subtitle">{{ $p.subtitle }}</p>
+    <p class="question">“How do we know when an AI Scientist is doing science?”</p>
+    <dl class="facts">
+      <div><dt>Date</dt><dd>{{ $p.date }}</dd></div>
+      <div><dt>Time</dt><dd>{{ $p.hours }}</dd></div>
+      <div><dt>Venue</dt><dd><a href="{{ $p.map }}">{{ $p.venue }}</a></dd></div>
+    </dl>
+    <p class="hosts">Hosted by Constructor Knowledge Labs in collaboration with ARIA · <a href="{{ $p.official }}">Official event page</a></p>
+  </div>
+</header>
+
+<main>
+  <section class="now" id="now" aria-live="polite">
+    <div class="wrap now-grid">
+      <div class="now-card now-current">
+        <span class="label">Now</span>
+        <strong id="now-title">Programme starts at 09:30 on 25 November</strong>
+        <span id="now-time" class="muted"></span>
+      </div>
+      <div class="now-card">
+        <span class="label">Next</span>
+        <strong id="next-title">Registration</strong>
+        <span id="next-time" class="muted">09:30</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap block" id="goal">
+    <h2>The goal of the day</h2>
+    <p class="lead">A credible benchmark cannot only check whether an AI Scientist reaches the right answer: it must evaluate how the result was produced. By the end of the day we want first shared answers, in the form of:</p>
+    <ul class="outcomes">
+      <li><strong>A v0 shared specification:</strong> task card, trace format, metric primitives and baselines, contamination protocol, judge policy, evaluating explanations.</li>
+      <li><strong>One-page summaries</strong> from Track A and Track B.</li>
+      <li><strong>An outline of a community whitepaper,</strong> with co-authors from the room.</li>
+    </ul>
+    <p class="note">Lightning talks have no Q&amp;A on stage. Questions and answers go to each talk's Miro board and to the working streams; participants received the links by e-mail.</p>
+  </section>
+
+  <section class="wrap block" id="programme">
+    <h2>Programme</h2>
+    <p class="muted">All times are GMT (Manchester local time).</p>
+    <ol class="programme">
+      {{ range site.Data.programme }}
+      <li class="row kind-{{ .kind }}" data-start="{{ .start }}" data-end="{{ .end }}">
+        <span class="time">{{ .start }}–{{ .end }}</span>
+        <span class="what">
+          {{ if .anchor }}<a href="#{{ .anchor }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
+          {{ with .note }}<small>{{ . }}</small>{{ end }}
+        </span>
+      </li>
+      {{ end }}
+    </ol>
+  </section>
+
+  <section class="wrap block" id="talks">
+    <h2>Talks</h2>
+    {{ with site.Data.talks.keynote }}
+    <article class="keynote">
+      <span class="badge badge-yellow">Keynote · {{ .start }}</span>
+      <h3>{{ .title }}</h3>
+      <p class="who"><strong>{{ .speaker }}</strong> · {{ .affiliation }}</p>
+      <p>{{ .abstract }}</p>
+    </article>
+    {{ end }}
+    {{ range site.Data.talks.blocks }}
+    <div class="talk-block" id="{{ .id }}">
+      <h3>{{ .title }} <span class="muted">{{ .time }}</span></h3>
+      <p class="muted">{{ .subtitle }} · 5 min each, no Q&amp;A on stage</p>
+      <ol class="talks">
+        {{ range .talks }}
+        <li>
+          <span class="time">{{ .start }}</span>
+          <span class="talk">
+            <strong>{{ .title }}</strong>
+            <small>{{ .speaker }}{{ with .affiliation }} · {{ . }}{{ end }}</small>
+          </span>
+        </li>
+        {{ end }}
+      </ol>
+    </div>
+    {{ end }}
+    <p class="note">Slides are in the participants' folder; the link was sent by e-mail.</p>
+  </section>
+
+  <section class="wrap block" id="tracks">
+    <h2>Tracks</h2>
+    <p class="lead">Two parallel tracks work through two sets of questions: set 1 before lunch, set 2 after it. Each answer goes into the Miro template of the track, and from there into a block of the v0 specification.</p>
+    <p class="muted">{{ range site.Data.tracks.schedule }}{{ .set }}: {{ .time }} · {{ end }}Convergence: 14:55–15:35</p>
+    <div class="tracks">
+      {{ range site.Data.tracks.tracks }}
+      <article class="track track-{{ .id }}">
+        <span class="badge">Track {{ .id }} · {{ .official }}</span>
+        <h3>{{ .name }}</h3>
+        <p>{{ .intro }}</p>
+        <p class="muted">Builds on {{ .feeds }}.</p>
+        {{ range .sets }}
+        <details class="qset" open>
+          <summary>{{ .name }} · {{ .minutes }} min · {{ .theme }}</summary>
+          <ol class="questions">
+            {{ range .questions }}
+            <li>
+              <strong>{{ .title }}.</strong> {{ .text }}
+              <span class="output">Output: {{ .output }}{{ with .feeds }} <span class="feeds">→ {{ delimit . ", " }}</span>{{ end }}</span>
+            </li>
+            {{ end }}
+          </ol>
+        </details>
+        {{ end }}
+      </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="wrap block" id="convergence">
+    <h2>Outputs: the v0 specification and the whitepaper</h2>
+    <p class="lead">In the convergence session (14:55) each track presents its answers block by block. Disagreements are recorded as findings; nothing is dropped without a reason.</p>
+    <ol class="spec">
+      {{ range site.Data.tracks.spec }}
+      <li><span class="n">{{ .n }}</span><span class="name">{{ .name }}</span><span class="from">from {{ .from }}</span></li>
+      {{ end }}
+    </ol>
+    <div class="results">
+      <h3>Results</h3>
+      <p>After the workshop this section will hold the v0 specification, the one-page summaries of the tracks and the whitepaper outline. Everyone who contributes a section or a case study can join the whitepaper as a co-author; the sign-up is at the closing session.</p>
+    </div>
+  </section>
+
+  <section class="wrap block" id="venue">
+    <h2>Venue</h2>
+    <p><strong>{{ $p.venue }}</strong></p>
+    <p><a class="button" href="{{ $p.map }}">Open in Google Maps</a></p>
+    <p class="muted">Wi-Fi details and the working-stream invitation are shared with participants directly.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p><strong>Organising committee:</strong> Andrey Ustyuzhanin (Constructor Knowledge Labs), Aayush Chadha, Alice Pettitt and Izzy Foord (ARIA).</p>
+    <p><a href="{{ $p.official }}">Official event page</a> · <a href="mailto:{{ $p.contact }}">{{ $p.contact }}</a> · Working site by the Omniscale Intelligence Initiative</p>
+  </div>
+</footer>
+{{ end }}

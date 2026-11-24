@@ -1,0 +1,215 @@
+{
+ "schedule": [
+  {
+   "set": "Set 1",
+   "time": "12:10–13:10"
+  },
+  {
+   "set": "Set 2",
+   "time": "14:00–14:40"
+  }
+ ],
+ "tracks": [
+  {
+   "id": "A",
+   "name": "How to score an AI Scientist: the process, not the answer",
+   "official": "Evaluation Framework",
+   "intro": "A correct final answer says little about how it was reached. What should a score be built from, who judges it, and how do we trust it?",
+   "feeds": "Lightning talks 2",
+   "sets": [
+    {
+     "name": "Set 1",
+     "minutes": 60,
+     "theme": "what counts as good scientific work by an agent",
+     "questions": [
+      {
+       "title": "Discovery vs. a correct answer",
+       "text": "When an AI Scientist arrives at a correct result, what else do we need to know before we credit it with having done science? Which of these things can actually be observed?",
+       "output": "Signs of good scientific process",
+       "feeds": [
+        "Requirements"
+       ]
+      },
+      {
+       "title": "Understanding, not only prediction",
+       "text": "An AI Scientist should produce not only accurate predictions but also understanding: an explanation of why things happen. What makes an explanation good (it is causal, it transfers to new cases, it suggests experiments, a human expert can use it)? How can it be evaluated separately from predictive accuracy? How do we compare results of different depth, from a fitted curve to a law, a mechanism or a new concept, across fields as different as biology, materials and mathematics?",
+       "output": "Criteria for a good explanation; levels of depth with examples from the room",
+       "feeds": [
+        "Evaluating explanations"
+       ]
+      },
+      {
+       "title": "Choosing experiments and changing one's mind",
+       "text": "How should we evaluate the way an agent picks its next experiment and revises its beliefs? What would a good record of hypotheses, predictions and revisions look like, and what would it let us measure that the final answer hides?",
+       "output": "What is recorded before and after each experiment",
+       "feeds": [
+        "Trace format"
+       ]
+      },
+      {
+       "title": "The trace",
+       "text": "What must a record of an AI Scientist's work contain so that someone outside the team can audit, replay or challenge the result? Where is the line between a useful trace and an unreadable log?",
+       "output": "Minimal trace contents",
+       "feeds": [
+        "Trace format"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Set 2",
+     "minutes": 40,
+     "theme": "how to compute the score and why to trust it",
+     "questions": [
+      {
+       "title": "The judge",
+       "text": "Who, or what, should judge an AI Scientist's output? How do the options (code checks, LLM judges, human experts, an independent lab) trade off cost, speed and trust? How do we validate the judge itself? What would it take for judges to be independent and to have something at stake, and for results to be resolved by experiment rather than by citations or by a model that only knows the current consensus?",
+       "output": "Judge policy",
+       "feeds": [
+        "Judge policy"
+       ]
+      },
+      {
+       "title": "Metrics beyond accuracy",
+       "text": "Which measurements would capture what final-answer accuracy misses, including the quality of explanations, and how could each of them be gamed? What makes a metric robust enough to share across teams? Should an agent get credit for being right when everyone else was right too? How do we reward forecasts made against the consensus that later proved correct (forecast alpha), rather than the plain hit rate?",
+       "output": "Metric primitives, what each catches and how it is gamed",
+       "feeds": [
+        "Metrics & baselines"
+       ]
+      },
+      {
+       "title": "Comparison and scale",
+       "text": "What should an AI Scientist be compared against: simple baselines, human scientists, the same model without tools? How do we move from scoring single tasks to measuring how much AI speeds up a whole research field? How quickly should the score update: in months rather than years?",
+       "output": "Reference points and field-level measures",
+       "feeds": [
+        "Metrics & baselines",
+        "Beyond single tasks"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "name": "Where to test an AI Scientist: tasks that separate discovery from memory",
+   "official": "Datasets & Environments",
+   "intro": "If a model saw the answer in training, the benchmark measures recall. Which tasks, environments and references let us tell discovery from memory, and who keeps them alive?",
+   "feeds": "Lightning talks 1",
+   "sets": [
+    {
+     "name": "Set 1",
+     "minutes": 60,
+     "theme": "what makes a task a test of discovery",
+     "questions": [
+      {
+       "title": "Discovery or memory",
+       "text": "How can we tell whether an agent discovered something or recalled it from its training data (leakage through training)? Which variants of a task (historical, obfuscated, counterfactual, synthetic, or no data at all) help separate the two, and what does the gap between them tell us?",
+       "output": "Ladder of task variants and how the gap is reported",
+       "feeds": [
+        "Contamination protocol"
+       ]
+      },
+      {
+       "title": "Ground truth when it is scarce and slow",
+       "text": "In biology and materials one confirmed answer can take months of lab work. What can serve as a reference: experiments after the training cutoff, a replay of a field up to a given year, AI predictions that failed in the lab (Freeston), real false discoveries, open questions recorded with a date and resolved later by experiment (prospective tasks)? How strong is each source, and how do we handle partial or contested answers?",
+       "output": "Sources of reference answers ranked by strength",
+       "feeds": [
+        "Task card",
+        "Reference tasks"
+       ]
+      },
+      {
+       "title": "Open-ended discovery",
+       "text": "How do we build tasks with no single right answer: noticing an anomaly without a hint, deciding that a new entity is needed, recognising emergence in an open-ended world (ALife), proposing what matters in an enzyme reaction (Finnigan)? What counts as success in such a task?",
+       "output": "One open-ended task type with its success criterion",
+       "feeds": [
+        "Reference tasks"
+       ]
+      },
+      {
+       "title": "Tasks that test understanding",
+       "text": "How do we design tasks whose answer is an explanation rather than a number, for example transfer to a new system or predicting the result of an intervention that was never tried? (How to judge the explanation itself is Track A, question 1.2.)",
+       "output": "Task patterns for testing explanations",
+       "feeds": [
+        "Evaluating explanations"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Set 2",
+     "minutes": 40,
+     "theme": "environments and contributions",
+     "questions": [
+      {
+       "title": "The environment and the budget",
+       "text": "What should the environment allow, limit or hide while the agent works: feedback on correctness, access to the reference (leakage at run time), the number and cost of experiments? How do we compare agents that spend very different compute, time and experiments on the same task? How do we treat a real wet lab, with its cost, delays, noise and safety limits, as part of a benchmark (Lee, Riggs)?",
+       "output": "Environment rules, mandatory and recommended; how cost enters the score",
+       "feeds": [
+        "Task card",
+        "Metrics & baselines",
+        "Contamination protocol"
+       ]
+      },
+      {
+       "title": "The task card and the life of a task",
+       "text": "What must a team describe when it contributes a task so that others can run it, trust it and maintain it? Once a task is published it starts leaking into training data and models saturate it: how do tasks stay valid (private hold-out sets, rotation, versions), and when is a task retired?",
+       "output": "Task-card fields; lifecycle rules",
+       "feeds": [
+        "Task card",
+        "How to contribute"
+       ]
+      },
+      {
+       "title": "What the room brings, and what the suite should cover",
+       "text": "Which fields and kinds of task should v0 cover (computational, physical lab, mathematics), and how do we keep the balance? Which tasks and environments are the teams in the room ready to contribute in the next two months, and what would they need from a shared suite in return?",
+       "output": "3–5 task families, each with an owner and a date",
+       "feeds": [
+        "Reference tasks",
+        "How to contribute"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "spec": [
+  {
+   "n": "1",
+   "name": "Task card",
+   "from": "B"
+  },
+  {
+   "n": "2",
+   "name": "Trace format",
+   "from": "A + B"
+  },
+  {
+   "n": "3",
+   "name": "Metric primitives & baselines",
+   "from": "A"
+  },
+  {
+   "n": "4",
+   "name": "Contamination protocol",
+   "from": "B"
+  },
+  {
+   "n": "5",
+   "name": "Judge policy",
+   "from": "A"
+  },
+  {
+   "n": "6",
+   "name": "Evaluating explanations",
+   "from": "A + B"
+  },
+  {
+   "n": "7",
+   "name": "Open problems and what not to measure",
+   "from": "A + B"
+  }
+ ]
+}

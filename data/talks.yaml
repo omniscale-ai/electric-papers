@@ -1,0 +1,28 @@
+keynote:
+  speaker: "Dr Tatiana Shavrina"
+  affiliation: "FAIR, Meta Superintelligence Labs"
+  title: "Advancing Scientific Research with AI Research Agents"
+  start: "10:00"
+  abstract: "AI research agents are rapidly transforming scientific discovery by automating complex research workflows. This talk surveys recent advances in frontier agentic systems, LLM-based research assistants, and evaluation benchmarks, and examines agent performance across the scientific lifecycle, from hypothesis generation to experimentation and refinement."
+blocks:
+  - id: l1
+    title: "Lightning talks 1: what to evaluate"
+    subtitle: "Tasks, data and ground truth · feeds Track B"
+    time: "10:30–11:05"
+    talks:
+      - {start: "10:30", speaker: "Mark Zaretskiy", affiliation: "", title: "Scientific discovery benchmarks for LLM agents: a survey of 64 benchmarks"}
+      - {start: "10:36", speaker: "Phoebe Freeston", affiliation: "University of Oxford", title: "Benchmarking AI predictions of interkingdom protein–protein interactions with limited experimental ground truth"}
+      - {start: "10:42", speaker: "Henry Lee", affiliation: "Cultivarium", title: "Beyond plausible answers: evaluating AI scientists in the wet lab"}
+      - {start: "10:48", speaker: "Scott Riggs", affiliation: "Find What Matters", title: "What does it take to deploy an AI scientist in a high-throughput synthetic biology wet lab?"}
+      - {start: "10:54", speaker: "Will Finnigan", affiliation: "Disyn Biotec", title: "AI for data curation and automated enzymology"}
+      - {start: "11:00", speaker: "Andrey Ustyuzhanin & Mikhail Akhtyrchenko", affiliation: "Constructor Knowledge Labs", title: "Noticing emergence: an open-ended ALife benchmark for AI scientists (pilot)"}
+  - id: l2
+    title: "Lightning talks 2: how to evaluate"
+    subtitle: "Traces, metrics, judges and the system level · feeds Track A"
+    time: "11:15–11:45"
+    talks:
+      - {start: "11:15", speaker: "Ibragim Badertdinov", affiliation: "Nebius", title: "What agent trajectories show that scores hide"}
+      - {start: "11:21", speaker: "Nilesh Trivedi", affiliation: "AutoScience", title: "How can AI scientists combine rationalism and empiricism?"}
+      - {start: "11:27", speaker: "Stanislav Fedotov", affiliation: "Nebius · Maidenhead Project", title: "Competing with frontier labs"}
+      - {start: "11:33", speaker: "Mikhail Burtsev", affiliation: "London Institute for Mathematical Sciences", title: "Recursive criticality of AI self-improvement"}
+      - {start: "11:39", speaker: "Andrey Adashchik", affiliation: "Constructor University", title: "To be announced"}
