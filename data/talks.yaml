@@ -25,4 +25,4 @@ blocks:
       - {start: "11:21", speaker: "Nilesh Trivedi", affiliation: "AutoScience", title: "How can AI scientists combine rationalism and empiricism?"}
       - {start: "11:27", speaker: "Stanislav Fedotov", affiliation: "Nebius · Maidenhead Project", title: "Competing with frontier labs"}
       - {start: "11:33", speaker: "Mikhail Burtsev", affiliation: "London Institute for Mathematical Sciences", title: "Recursive criticality of AI self-improvement"}
-      - {start: "11:39", speaker: "Andrey Adashchik", affiliation: "Constructor University", title: "To be announced"}
+      - {start: "11:39", speaker: "Andrey Adashchik", affiliation: "Constructor University Bremen", title: "Judge policy: how do we validate the judge itself?"}
